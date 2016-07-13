@@ -14,7 +14,7 @@
 
   Commit is a command you use to tell the version control to create a new save point of the file or directory.
 
-  A good commit massage explains what was changed in the file or folder.
+  A good commit massage explains what was changed in the file and folder.
 
 * What is a merge conflict?
 
