@@ -1,0 +1,18 @@
+form creates a form for user input. Allows your browser to ask your information and pass that information onto another website. Nest form elements within. 
+
+input type="email" -  creates a textbox that expects and email input.
+
+input type="password" - creates a textbox that disguises user's input with black circles. 
+
+input type="text" - takes all types of text.
+
+
+input type="date" - Creates a calender that allows user to choose a date.
+
+input type"checkbox" - Creates a box that can be checked or unchecked. 
+
+select - Creates a list of items and allows us to choose one. 
+
+label - Text that defines what form element does. 
+
+button - Creates a button.  
