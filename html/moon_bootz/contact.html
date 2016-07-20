@@ -1,12 +1,28 @@
 <html>
+
 <head>
   <title>Contact</title>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(32.2680738,-110.99239039999998),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </head>
 <body>
   <header>
     <a href="index.html">Back</a>
   </header>
+  <div id="googleMap" style="width:500px;height:380px;"></div>
+
   <h1>Address:</h1>
   <p>MARY ROE MEGASYSTEMS INC SUITE 5A-1204 799 E DRAGRAM TUCSON AZ 85705 USA</p>
+
 </body>
 </html>
