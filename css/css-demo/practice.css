@@ -1,0 +1,27 @@
+section#contact-info {
+	font-size: .8em;
+}
+.job {
+	background-color: #e9e5dc;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+.smaller-text {
+	font-size: .8em;
+}
+
+a:link {
+	color: blue;
+}
+a:hover {
+	color: green;
+}
+#bold_li {
+	color: blue;
+	font-weight: bold;
+}
