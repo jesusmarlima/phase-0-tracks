@@ -10,13 +10,13 @@ while times < number_of_employees do
     p "what year were you born ? "
     year_born = gets.chomp()
     p "Our company cafeteria serves garlic bread. Should we order some for you? "
-    eat_garlic_bread = gets.chomp() == "yes" ? true : false
+    eat_garlic_bread = gets.chomp().do == "yes" ? true : false
     p "Would you like to enroll in the company’s health insurance?"
-    want_health_insurance = gets.chomp() == "yes" ? true : false
+    want_health_insurance = gets.chomp().downcase == "yes" ? true : false
     age_ok = (age.to_i + year_born.to_i) == 2016
 
     allergy = ""
-    until allergy == "done" do
+    until allergy.downcase == "done" do
       p "name any allergies to you have:"
       allergy = gets.chomp
       break if allergy == "sunshine"
@@ -38,3 +38,5 @@ while times < number_of_employees do
 
     times += 1
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
