@@ -17,7 +17,7 @@ while times < number_of_employees do
     age_ok = (age.to_i + year_born.to_i) == 2016
 
     allergy = ""
-    until allergy.downcase == "done" do
+    while allergy.downcase != "done" do
       print "name any allergies to you have:"
       allergy = gets.chomp
       break if allergy == "sunshine"
