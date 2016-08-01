@@ -1,0 +1,41 @@
+# the robot is already in front of elevator at the ground floor and he knows what floor it want to go! :)
+
+While not found the command panel
+   Find the command panel
+
+Press the button (in this buildind Ground floor has is only one button)
+
+While the door is closed
+  Wait
+
+Move to inside the elevator
+
+While not found the command panel
+  Find the command painel
+
+Until to find the button with the same number that is in the robot memory
+  find the button with the number stored in the robot memory
+
+Press the found button
+
+while robot is inside of elevator
+  if the door is open and reach out the required floor.
+      Move to outside the elevator
+  otherwise
+      wait.
+
+----------------------------------------
+
+making coffe (italian coffe maker)
+
+- open the coffee maker
+- put water in the bottom part until is full
+- put ground coffe in the meddle part
+- mount the coffee maker
+- light the fire fo stove
+- put the coffee maker on the fire
+- wait until be ready
+- turn off the fire
+- enjoy!
+
+
