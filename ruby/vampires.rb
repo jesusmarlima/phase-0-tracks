@@ -28,7 +28,7 @@ while times < number_of_employees do
       puts "Probably a vampire."
     elsif age_ok && ( eat_garlic_bread || want_health_insurance )
       puts "probably not a vampire"
-    elsif !age_ok && (( !eat_garlic_bread && want_health_insurance ) || (                          eat_garlic_bread && !want_health_insurance ))
+    elsif !age_ok && (( !eat_garlic_bread && want_health_insurance ) || (eat_garlic_bread && !want_health_insurance ))
       puts "Probably a vapire"
     elsif !age_ok && !eat_garlic_bread && !want_health_insurance
       puts "Almost certainly a vapire."
