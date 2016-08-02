@@ -23,20 +23,30 @@ while times < number_of_employees do
       break if allergy == "sunshine"
     end
 
-    puts " "
     if allergy == "sunshine"
       puts "Probably a vampire."
-    elsif age_ok && ( eat_garlic_bread || want_health_insurance )
-      puts "probably not a vampire"
-    elsif !age_ok && (( !eat_garlic_bread && want_health_insurance ) || (eat_garlic_bread && !want_health_insurance ))
-      puts "Probably a vapire"
-    elsif !age_ok && !eat_garlic_bread && !want_health_insurance
-      puts "Almost certainly a vapire."
-    elsif name == "Drake Cula" || name == "Tu Fang"
-      puts "Definitely a vampire"
-    else
-      puts "Results inconclusive."
+      next
     end
+
+    puts " "
+    message = ""
+
+
+    if age_ok && ( eat_garlic_bread || want_health_insurance )
+      message = "probably not a vampire"
+    elsif !age_ok && ( !eat_garlic_bread ^ !want_health_insurance )
+      message = "Probably a vapire"
+    elsif !age_ok && !eat_garlic_bread && !want_health_insurance
+      message = "Almost certainly a vapire."
+    else
+      message = "Results inconclusive."
+    end
+
+    if name == "Drake Cula" || name == "Tu Fang"
+      message = "Definitely a vampire"
+    end
+
+    puts message
 
     times += 1
 end
