@@ -1,0 +1,36 @@
+body {
+  background-image: url("https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg");
+}
+
+header {
+   display: block;
+   border: 1px solid black;
+   padding: 5px;
+   color: white;
+}
+
+section.column-1 {
+  verical-align: top;
+  /* float: left; */
+  display: inline-block;
+  width: 49%;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
+
+section.column-2 {
+  /* float: right; */
+  vertical-align: top;
+  display: inline-block;
+  width: 49%;
+  color: #ff0066;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+footer {
+  margin-top: 10px;
+  color: white;
+  padding: 5px;
+  display: block;
+  border: 1px solid black;
+}
