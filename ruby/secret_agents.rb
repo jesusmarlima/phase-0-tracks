@@ -23,7 +23,6 @@ def encrypt(message)
   encrypted_message
 end
 
-
 def decrypt(message)
   decrypted_message = ""
   char_index = 0
