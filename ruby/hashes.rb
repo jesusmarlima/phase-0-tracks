@@ -89,15 +89,15 @@ end
 
   #Ask if the user wants to change something that was typed
   print "if you want to update some value above, please type the label of the value you \n want to change and press enter, otherwise type 'none':"
-  str =  gets.chomp.downcase
+  answer_key = gets.chomp.downcase
   #none to finish the program
-  if str != 'none'
+  if answer_key != 'none'
           #this line below compare what was typed to know if exist in hash, if true I change the value with 'update' method and show again
-          if my_hash_decorator.keys.include?(str.to_sym)
-            update(str,my_hash_decorator)
+          if my_hash_decorator.keys.include?(answer_key.to_sym)
+            update(answer_key,my_hash_decorator)
             show_data(my_hash_decorator);
           else
-            puts "the #{str} label you wrote does not exists, please execute the program again!"
+            puts "the #{answer_key} label you wrote does not exists, please execute the program again!"
         end
   end
   puts " "
