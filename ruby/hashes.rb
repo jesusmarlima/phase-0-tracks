@@ -31,7 +31,7 @@ def get_information_from_user(hash)
     print "Number of childreen:"
     hash[:'number of childreen'] = gets.chomp.to_i
     print "Deccor Theme:"
-    hash[:'decor theme'] = gets.chomp
+    hash[:'deccor theme'] = gets.chomp
     print "is accessibility needed? (y/n)"
     hash[:accessibility] = convert_str_to_boolean(gets.chomp)
     #if accessiblity is yes, i ask what is needs
