@@ -34,6 +34,7 @@ def get_information_from_user(hash)
     hash[:'decor theme'] = gets.chomp
     print "is accessibility needed? (y/n)"
     hash[:accessibility] = convert_str_to_boolean(gets.chomp)
+    #if accessiblity is yes, i ask what is needs
     if hash[:accessibility]
       print "accessibility needs:"
       hash[:'accessibility needs'] = gets.chomp
@@ -55,15 +56,22 @@ end
 def update(str,hash)
   puts " "
   print "please type the new value of #{ str }: "
+
+  # if the user changes accessibility
+  # - yes to no, I need to delete the accessbility needs field
+  # - no to yes, I need to ask what are needs
+
   if str.to_sym == :accessibility
     print "(y,n) "
     hash[str.to_sym] = convert_str_to_boolean(gets.chomp)
+    #after changed I ask to know if need to delete or add accessibility needs
     if hash[:accessibility]
       print "accessibility needs:"
       hash[:'accessibility needs'] = gets.chomp
     else
       hash.delete(:'accessibility needs')
     end
+    #just to know if I need to storage interger or not
     elsif str.to_sym == :age || str.to_sym == :'number of childreen'
         hash[str.to_sym] = gets.chomp.to_i
     else
@@ -81,6 +89,7 @@ end
   print "if you want to update some value above, please type the label of the value you \n want to change and press enter, otherwise type 'none':"
   str =  gets.chomp.downcase
   if str != 'none'
+          #this line below compare what was typed to know if exist in hash, if true I change the value if method update
           if my_hash_decorator.keys.include?(str.to_sym)
             update(str,my_hash_decorator)
             show_data(my_hash_decorator);
