@@ -23,59 +23,59 @@ def convert_boolean_to_str_if_needed(value)
   end
 end
 
-def get_information_from_user(hash)
+def get_information_from_user(client_data)
     print "Name:"
-    hash[:name] = gets.chomp
+    client_data[:name] = gets.chomp
     print "Age:"
-    hash[:age] = gets.chomp.to_i
-    print "Number of childreen:"
-    hash[:'number of childreen'] = gets.chomp.to_i
+    client_data[:age] = gets.chomp.to_i
+    print "Number of children:"
+    client_data[:'number of children'] = gets.chomp.to_i
     print "Deccor Theme:"
-    hash[:'deccor theme'] = gets.chomp
+    client_data[:'deccor theme'] = gets.chomp
     print "Accessibility ? (y/n)"
-    hash[:accessibility] = convert_str_to_boolean(gets.chomp)
+    client_data[:accessibility] = convert_str_to_boolean(gets.chomp)
     #if accessiblity is yes, i ask what is needs
-    if hash[:accessibility]
-      print "accessibility needs:"
-      hash[:'accessibility needs'] = gets.chomp
+    if client_data[:accessibility]
+      print "Accessibility needs:"
+      client_data[:'accessibility needs'] = gets.chomp
     end
-    hash
+    client_data
 end
 
-def show_data(hash)
+def show_data(client_data)
   puts " "
   puts "Answers:"
   puts " "
 
-  hash.each do |k,v|
+  client_data.each do |k,v|
     puts "#{k.to_s.capitalize}: #{convert_boolean_to_str_if_needed(v)}"
   end
   puts " "
 end
 
-def update(str,hash)
+def update(key,client_data)
   puts " "
-  print "please type the new value of #{ str }: "
+  print "please type the new value of #{ key }: "
 
   # if the user changes accessibility
   # - yes to no, I need to delete the accessbility needs field
   # - no to yes, I need to ask what are needs
 
-  if str.to_sym == :accessibility
+  if key.to_sym == :accessibility
     print "(y,n) "
-    hash[str.to_sym] = convert_str_to_boolean(gets.chomp)
+    client_data[key.to_sym] = convert_str_to_boolean(gets.chomp)
     #after changed I ask to know if need to delete or add accessibility needs
-    if hash[:accessibility]
-      print "accessibility needs:"
-      hash[:'accessibility needs'] = gets.chomp
+    if client_data[:accessibility]
+      print "Accessibility needs:"
+      client_data[:'accessibility needs'] = gets.chomp
     else
-      hash.delete(:'accessibility needs')
+      client_data.delete(:'accessibility needs')
     end
     #just to know if I need to storage interger or not
-    elsif str.to_sym == :age || str.to_sym == :'number of childreen'
-        hash[str.to_sym] = gets.chomp.to_i
+    elsif key.to_sym == :age || key.to_sym == :'number of children'
+        client_data[key.to_sym] = gets.chomp.to_i
     else
-        hash[str.to_sym] = gets.chomp
+        client_data[key.to_sym] = gets.chomp
     end
 end
 
@@ -83,9 +83,9 @@ end
 #  MAIN PROGRAM
   # clear screen
   Gem.win_platform? ? (system "cls") : (system "clear")
-  my_hash_decorator = {}
-  my_hash_decorator = get_information_from_user(my_hash_decorator)
-  show_data(my_hash_decorator)
+  client_data = {}
+  client_data = get_information_from_user(client_data)
+  show_data(client_data)
 
   #Ask if the user wants to change something that was typed
   print "if you want to update some value above, please type the label of the value you \n want to change and press enter, otherwise type 'none':"
@@ -93,9 +93,9 @@ end
   #none to finish the program
   if answer_key != 'none'
           #this line below compare what was typed to know if exist in hash, if true I change the value with 'update' method and show again
-          if my_hash_decorator.keys.include?(answer_key.to_sym)
-            update(answer_key,my_hash_decorator)
-            show_data(my_hash_decorator);
+          if client_data.keys.include?(answer_key.to_sym)
+            update(answer_key,client_data)
+            show_data(client_data);
           else
             puts "the #{answer_key} label you wrote does not exists, please execute the program again!"
         end
