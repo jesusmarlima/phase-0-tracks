@@ -24,15 +24,15 @@ def convert_boolean_to_str_if_needed(value)
 end
 
 def get_information_from_user(hash)
-    print "Client name:"
+    print "Name:"
     hash[:name] = gets.chomp
-    print "Client age:"
+    print "Age:"
     hash[:age] = gets.chomp.to_i
     print "Number of childreen:"
     hash[:'number of childreen'] = gets.chomp.to_i
     print "Deccor Theme:"
     hash[:'deccor theme'] = gets.chomp
-    print "is accessibility needed? (y/n)"
+    print "Accessibility ? (y/n)"
     hash[:accessibility] = convert_str_to_boolean(gets.chomp)
     #if accessiblity is yes, i ask what is needs
     if hash[:accessibility]
