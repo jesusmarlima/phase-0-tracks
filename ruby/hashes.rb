@@ -86,10 +86,13 @@ end
   my_hash_decorator = {}
   my_hash_decorator = get_information_from_user(my_hash_decorator)
   show_data(my_hash_decorator)
+
+  #Ask if the user wants to change something that was typed
   print "if you want to update some value above, please type the label of the value you \n want to change and press enter, otherwise type 'none':"
   str =  gets.chomp.downcase
+  #none to finish the program
   if str != 'none'
-          #this line below compare what was typed to know if exist in hash, if true I change the value if method update
+          #this line below compare what was typed to know if exist in hash, if true I change the value with 'update' method and show again
           if my_hash_decorator.keys.include?(str.to_sym)
             update(str,my_hash_decorator)
             show_data(my_hash_decorator);
