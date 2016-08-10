@@ -7,9 +7,17 @@
 # "aeiou" string is needed to know if each char of the array of strings is vowel or consonants
 # loop into the each char of the string
 # ask if is vowel
-# if is true get next element of vowels
-# if is consonant get next consonant
-# print the consonant at the end
+# if is true get next element of vowels adding to the new string
+# if is consonant get next consonant adding to the new string
+# return the new name at the end
+# print the new name to the user at the end
+#----------------------------------
+# release 2
+# Program
+# hash to store the names and alias
+# iterate the hash to print each key value
+
+
 
 # clear screen
 def clear_screen
@@ -99,12 +107,25 @@ end
 #-------------BEGIN PROGRAM------------------------------
 
 clear_screen
+agent_name_and_alias = {}
+# repeat and break if the word is 'quit'
 loop do
   puts " "
-  print "Dear mr(s) agent, please type your full name or 'quit' to exit :"
+  print "Dear mr(s) agent, please type your full name or 'quit' to exit: "
   full_name = gets.chomp
   break if full_name == "quit"
+  agent_alias = alias_to(full_name)
+  agent_name_and_alias[full_name] = agent_alias
   puts " "
-  print "Mr(s) #{full_name} your alias is: #{alias_to(full_name)}"
+  print "Mr(s) #{full_name} your alias is: #{agent_alias}"
   puts " "
 end
+
+clear_screen
+
+agent_name_and_alias.each do |agent_name,agent_alias|
+    puts "#{agent_alias} is actually #{agent_name}"
+end
+
+puts " "
+puts "The end! Thanks!"
