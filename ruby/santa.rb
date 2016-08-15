@@ -1,5 +1,8 @@
 class Santa
 
+    attr_reader :age, :ethnicity, :reindeer_ranking
+    attr_accessor :gender
+
     def initialize(gender,ethnicity)
       @gender = gender
       @ethnicity = ethnicity
@@ -22,28 +25,6 @@ class Santa
 
     def get_mad_at(name)
       @reindeer_ranking.push(@reindeer_ranking.delete(name))
-    end
-
-    #----getter---
-    def age
-      @age
-    end
-
-    def ethnicity
-      @ethnicity
-    end
-
-    def reindeer_ranking
-      @reindeer_ranking.to_s
-    end
-
-    def gender
-      @gender
-    end
-
-    #----setter---
-    def gender= (gender)
-      @gender = gender
     end
 
 end
@@ -78,12 +59,13 @@ example_genders.each_with_index do |gender,index|
   santas << Santa.new(gender,example_ethnicities[index])
 end
 
+#take a santa instace of array and use to test readable or writable attributes
 santa_test = santas[0]
 
 #test get_mad_at
-puts santa_test.reindeer_ranking
+p santa_test.reindeer_ranking
 santa_test.get_mad_at("Dasher")
-puts santa_test.reindeer_ranking
+p santa_test.reindeer_ranking
 
 #test celebrate_birthday
 puts santa_test.age
@@ -95,5 +77,5 @@ puts santa_test.ethnicity
 
 # test setter gender
 puts santa_test.gender
-santa_test.gender = "guajajara"
+santa_test.gender = "Cis Female."
 puts santa_test.gender
