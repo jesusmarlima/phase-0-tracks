@@ -1,20 +1,50 @@
 class Santa
 
-def initialize(gender,ethnicity)
-  @gender = gender
-  @ethnicity = ethnicity
-  @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-  @age = 0
-  puts "\ninitializing Santa instance..."
-end
+    def initialize(gender,ethnicity)
+      @gender = gender
+      @ethnicity = ethnicity
+      @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+      @age = 0
+      puts "\ninitializing Santa instance..."
+    end
 
-def speak
-  puts "\nHo, Ho, Ho, Haaaaaappy holidays!"
-end
+    def speak
+      puts "\nHo, Ho, Ho, Haaaaaappy holidays!"
+    end
 
-def eat_milk_and_cookies(cookie_type)
-  puts "\nThats was a good #{cookie_type} here!"
-end
+    def eat_milk_and_cookies(cookie_type)
+      puts "\nThats was a good #{cookie_type} here!"
+    end
+
+    def celebrate_birthday
+      @age = 1
+    end
+
+    def get_mad_at(name)
+      @reindeer_ranking.push(@reindeer_ranking.delete(name))
+    end
+
+    #----getter---
+    def age
+      @age
+    end
+
+    def ethnicity
+      @ethnicity
+    end
+
+    def reindeer_ranking
+      @reindeer_ranking.to_s
+    end
+
+    def gender
+      @gender
+    end
+
+    #----setter---
+    def gender= (gender)
+      @gender = gender
+    end
 
 end
 
@@ -47,3 +77,23 @@ example_ethnicities.sort!
 example_genders.each_with_index do |gender,index|
   santas << Santa.new(gender,example_ethnicities[index])
 end
+
+santa_test = santas[0]
+
+#test get_mad_at
+puts santa_test.reindeer_ranking
+santa_test.get_mad_at("Dasher")
+puts santa_test.reindeer_ranking
+
+#test celebrate_birthday
+puts santa_test.age
+santa_test.celebrate_birthday
+puts santa_test.age
+
+# test getter ethnicity
+puts santa_test.ethnicity
+
+# test setter gender
+puts santa_test.gender
+santa_test.gender = "guajajara"
+puts santa_test.gender
