@@ -13,9 +13,14 @@
 
 def list_creator(input_items)
   items_array = input_items.split(" ")
+
   list_items = Hash.new(0)
   items_array.each do |item|
-    list_items[item] = 1
+    if list_items[item] != 0
+      list_items[item] +=1
+    else
+      list_items[item] = 1
+    end
   end
   return list_items
 end
@@ -32,7 +37,12 @@ def add_items(list_items, item, amount)
   return list_items
 end
 
-items =  list_creator("apples oranges")
+items =  list_creator("apples oranges apples")
+
+puts items
+
+puts "-----------------------"
+
 add_items(items,"lemonade",6 )
 add_items(items,"tomatos",3 )
 add_items(items,"onions",1 )
