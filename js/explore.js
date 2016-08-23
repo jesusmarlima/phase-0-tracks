@@ -5,14 +5,27 @@
 // add each char to a new string
 //return a new string
 
-function reverse(string) {
+function reverse(word) {
 
   var reversed = "";
-  for (i=0;i<string.length;i++){
-    index_reversed = (string.length - 1) - i;
-    reversed += string[index_reversed];
+  for (i=0;i< word.length;i++){
+    index_reversed = (word.length - 1) - i;
+    reversed += word[index_reversed];
   }
   return reversed
 };
 
-console.log("mario reverted is :",reverse("mario"));
+
+var reversed = reverse("hello");
+console.log("hello reverted is :", reverse("hello"))
+
+var reversed = reverse("Jesusmar");
+
+if (reversed === "ramsuseJ") {
+  console.log("Reverse function works");
+}
+else {
+  console.log("ops somethig wrong");
+}
+
+
