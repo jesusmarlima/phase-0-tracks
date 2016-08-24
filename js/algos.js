@@ -43,18 +43,39 @@ function has_key_value(key,value,obj2){
 
 //------------------------ driver code -------------------------------------
 //test release 0
+console.log("-----------------------------")
+console.log("Tests for release 0")
 array = ["me","I am the king of the word","Titanic","how about to see a movie tomorrow"]
-console.log("longest phrases or word is: " , longest_word_or_phrase(array) );
+console.log("Array:",array)
+console.log("\nlongest phrases or word is: " , longest_word_or_phrase(array) );
 
 
 //test release 1
+console.log("\n-----------------------------")
+console.log("Tests for release 1")
 
 var pear = {color: 'green', weight:10}
 var apple = {color: 'red', weight:10}
 
+console.log("Object 1:", pear)
+console.log("Object 2:", apple)
+
 if (key_value_match(pear,apple)){
-  console.log("they have at least one common attribute")
+  console.log("\nthey have at least one common attribute")
   }
 else {
-  console.log("Nothing equals");
+  console.log("\nNothing equals");
+}
+
+var pear = {color: 'green', weight:10}
+var apple = {color: 'red', weight:11}
+
+console.log("\nObject 1:", pear)
+console.log("Object 2:", apple)
+
+if (key_value_match(pear,apple)){
+  console.log("\nthey have at least one common attribute")
+  }
+else {
+  console.log("\nNothing equals");
 }
