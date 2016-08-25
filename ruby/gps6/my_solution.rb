@@ -20,8 +20,7 @@ class VirusPredictor
 
   # Calls on two other methods
   def virus_effects
-    predicted_deaths
-    speed_of_spread
+      puts "#{@state} will lose #{predicted_deaths} people in this outbreak and will spread across the state in #{speed_of_spread} months.\n\n"
   end
 
   # Prints information about the spread of disease
@@ -31,19 +30,13 @@ class VirusPredictor
   # Calculates and prints number of deaths in the state
   def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
 
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+    factors = {200 => 0.4, 150 => 0.3, 100 => 0.2, 50 => 0.1 , 0 => 0.05 }
+
+    # another way to get the factor to multiplay with Population
+
+    factor = factors.select{|population_density, factor| population_density <= @population_density }.values.first
+    return (@population * factor).floor
 
   end
 
@@ -51,21 +44,10 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
-
-    puts " and will spread across the state in #{speed} months.\n\n"
+    # another way to get the factor to return the corret speed
+    factors = {200 => 0.5, 150 => 1, 100 => 1.5, 50 => 2 , 0 => 2.5 }
+    speed = factors.select{|population_density, speed| population_density <= @population_density }.values.first
 
   end
 
