@@ -26,6 +26,7 @@ create table apartments (
 INSERT INTO buildings(id,name,area,roof_top,floors) VALUES (1,"Green Grass",270,"true",3);
 INSERT INTO buildings(id,name,area,roof_top,floors) VALUES (2,"Pretty Girls",300,"true",3);
 INSERT INTO buildings(id,name,area,roof_top,floors) VALUES (3,"Fluffy Clouds",600,"false",3);
+INSERT INTO buildings(id,name,area,roof_top,floors) VALUES (4,"Blue Sky",1000,"false",3);
 
 INSERT INTO apartments(id,number,beds,area,garage_vacancy,building_id) VALUES (1,"1A",2,90,"false",1);
 INSERT INTO apartments(id,number,beds,area,garage_vacancy,building_id) VALUES (2,"1B",2,90,"true",1);

@@ -7,7 +7,7 @@ select * from apartments;
    --(Fluffy cloud building will have only 2 floor)
 
 update  apartments set garage_vacancy = "true" where building_id = 1;
-update  buildings set floors = 2 where name = "Fluffy Clouds"
+update  buildings set floors = 2 where name = "Fluffy Clouds";
 
 -- 3 - Display the information in both tables using one query.
   --(shows all data from both table)
@@ -19,7 +19,27 @@ select * from buildings b , apartments a where b.id = a.building_id;
   --(shows building name, apartmens number, number of beds of each apartment)
 select b.name, a.number, a.beds from buildings b , apartments a where b.id = a.building_id;
 
--  5 - Delete an item that meets some condition (you can choose a condition that makes sense).
-  (As building Fluffy Clouds will have only 2 floors, we have to delete all unities from 3th floor)
+-- 5 - Delete an item that meets some condition (you can choose a condition that makes sense).
+  --(As building Fluffy Clouds will have only 2 floors, we have to delete all unities from 3th floor)
 
   delete from apartments where building_id = 3 and number like "3%";
+
+
+
+----------------- release 3
+-- return a comnination of bouth tables (multiplay all by all)
+-- CROSS JOIN
+SELECT * FROM apartments a , buildings b ;
+SELECT * FROM apartments a CROSS JOIN buildings b ;
+
+-- INNER JOIN
+--return all data from both table that JOIN Clausule match
+SELECT * FROM apartments a , buildings b WHERE a.building_id = b.id;
+SELECT * FROM apartments a JOIN buildings b ON a.building_id = b.id;
+
+
+-- LEFT OUTER JOIN OR RIGTH OUTER JOIN (SQLite just accpect the LEFT)
+-- LEFT JOIN return all data from both table that JOIN Clausule match and plus the left side that fail.
+-- i. e. if We have a building without apartments.
+SELECT * FROM buildings b LEFT JOIN apartments a on  b.id = a.building_id;
+
