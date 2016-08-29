@@ -1,0 +1,25 @@
+-- 1- Display the information in one table (either table is fine).
+select * from buildings;
+select * from apartments;
+
+-- 2 - Update an item that meets some condition (you can choose a condition that makes sense).
+   --(all Green Grass unities have garage vacancy )
+   --(Fluffy cloud building will have only 2 floor)
+
+update  apartments set garage_vacancy = "true" where building_id = 1;
+update  buildings set floors = 2 where name = "Fluffy Clouds"
+
+-- 3 - Display the information in both tables using one query.
+  --(shows all data from both table)
+
+select * from buildings b , apartments a where b.id = a.building_id;
+
+-- 4 - Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+  --(shows building name, apartmens number, number of beds of each apartment)
+select b.name, a.number, a.beds from buildings b , apartments a where b.id = a.building_id;
+
+-  5 - Delete an item that meets some condition (you can choose a condition that makes sense).
+  (As building Fluffy Clouds will have only 2 floors, we have to delete all unities from 3th floor)
+
+  delete from apartments where building_id = 3 and number like "3%";
