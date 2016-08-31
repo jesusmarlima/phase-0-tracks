@@ -11,10 +11,9 @@ function longest_word_or_phrase(phrases){
   for (var i=0; i < (phrases.length - 1) ; i++){
       if (longest.length < phrases[i + 1].length ){
         longest = phrases[i + 1];
-        longest_word_index = i + 1;
       }
   }
-  return phrases[longest_word_index];
+  return longest;
 };
 
 //-------------------- release 1--------------------------------
