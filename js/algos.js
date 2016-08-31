@@ -7,8 +7,9 @@
 //-------------------- release 0--------------------------------
 function longest_word_or_phrase(phrases){
   longest_word_index = 0;
+  var longest = phrases[0];
   for (var i=0; i < (phrases.length - 1) ; i++){
-      if (phrases[i].length < phrases[i + 1].length ){
+      if (longest.length < phrases[i + 1].length ){
         longest_word_index = i + 1;
       }
   }
@@ -24,19 +25,9 @@ function longest_word_or_phrase(phrases){
 function key_value_match(obj1,obj2){
 
   for (var attribute in obj1){
-      if (has_key_value(attribute,obj1[attribute],obj2)){
-        return true;
-      }
-  }
-  return false;
-
-};
-
-function has_key_value(key,value,obj2){
-  for (var attribute in obj2){
-    if (attribute === key && value === obj2[attribute]){
-      return true;
-    }
+        if (obj2[attribute] == obj1[attribute]){
+         return true;
+       }
   }
   return false;
 };
@@ -85,6 +76,8 @@ console.log("Tests for release 0")
 array = ["me","I am the king of the word","Titanic","how about to see a movie tomorrow"]
 console.log("Array:",array)
 console.log("\nlongest phrases or word is: " , longest_word_or_phrase(array) );
+
+console.log(longest_word_or_phrase(["longest", "long", "longer"]));
 
 
 //test release 1
