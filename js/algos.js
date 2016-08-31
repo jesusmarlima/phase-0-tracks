@@ -6,14 +6,14 @@
 
 //-------------------- release 0--------------------------------
 function longest_word_or_phrase(phrases){
-  longest_word_index = 0;
+  var longest_word_index = 0;
   var longest = phrases[0];
   for (var i=0; i < (phrases.length - 1) ; i++){
       if (longest.length < phrases[i + 1].length ){
-        longest_word_index = i + 1;
+        longest = phrases[i + 1];
       }
   }
-  return phrases[longest_word_index];
+  return longest;
 };
 
 //-------------------- release 1--------------------------------
@@ -78,7 +78,8 @@ console.log("Array:",array)
 console.log("\nlongest phrases or word is: " , longest_word_or_phrase(array) );
 
 console.log(longest_word_or_phrase(["longest", "long", "longer"]));
-
+console.log(longest_word_or_phrase(["maria", "mariaa", "mariaaa"]));
+console.log(longest_word_or_phrase(["mariaa", "mariaaa", "maria"]));
 
 //test release 1
 console.log("\n-----------------------------")
