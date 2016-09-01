@@ -1,0 +1,34 @@
+2 -
+select * from business b, users u, reviews r
+where b.id = r.business_id and
+      r.user_id = u.id;
+
+select * from business b
+JOIN reviews r on b.id = r.business_id
+JOIN users u on r.user_id = u.id;
+
+1|Grundy Hollow|1|Jesusmar|Lima|1|5|Great staff|1|1
+2|Amir's Towing|2|Jeff|Lee|2|4|Well Priced|2|2
+3|The Beagle Nightclub|3|Mario|Pereira|3|1|Dirty floor|3|3
+
+______________________________________________________________
+
+3 -
+select u.first_name, u.last_name,  b.name , r.stars, r.comment from business b, users u, reviews r
+where b.id = r.business_id and
+      r.user_id = u.id;
+
+Jesusmar|Lima|Grundy Hollow|5|Great staff
+Jeff|Lee|Amir's Towing|4|Well Priced
+Mario|Pereira|The Beagle Nightclub|1|Dirty floor
+
+--------------------------------------------------------------
+
+
+select * from business b, users u, reviews r
+where b.id = r.business_id and
+      r.user_id = u.id and
+      b.name = "The Beagle Nightclub";
+
+3|The Beagle Nightclub|3|Mario|Pereira|3|1|Dirty floor|3|3
+
