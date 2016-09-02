@@ -14,7 +14,7 @@ require_relative 'building'
 require_relative 'apartment'
 require_relative 'helper'
 
-class Rental_builder
+class Rental_controller
   attr_reader :db
 
 
