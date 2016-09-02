@@ -1,3 +1,5 @@
+# In this file is all SQL used in program
+
     SQL_UPDATE_APARTMENT = <<-SQL
       UPDATE apartments set rented = ? where id = ?
     SQL
