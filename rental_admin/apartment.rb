@@ -16,6 +16,7 @@ class Apartment
         end
   end
 
+  #this method is used to persist an apartment into Database
   def create
     @db.execute(SQL_INSERT_APARTMENT,[@number,@rented,@number_of_beds,@building_id]);
     @id = @db.last_insert_row_id
@@ -26,10 +27,12 @@ class Apartment
     @number
   end
 
+  # is used to delete apartments
   def clear(*to_delete)
     @db.execute(SQL_CLEAR_TESTS_APARTMENT,self.id)
   end
 
+  # this method makes an apartment available or rented
   def rent_apartment
     if @rented == "true"
         @db.execute(SQL_UPDATE_APARTMENT, "false", self.id)
