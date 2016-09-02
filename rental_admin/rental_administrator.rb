@@ -1,4 +1,4 @@
-require_relative 'rental_administration'
+require_relative 'rental_controller'
 
 #clear screen
 
@@ -140,7 +140,7 @@ SET_APARTMENT_AS_RENTED = "2"
 CREATE_NEW_BUILDING = "3"
 EXIT = "4"
 
-@rental = Rental_builder.new
+@rental = Rental_controller.new
 @rental.initial_setup
 option = 0
 
