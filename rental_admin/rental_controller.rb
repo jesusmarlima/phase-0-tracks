@@ -98,9 +98,6 @@ class Rental_controller
           print " |      | "
         end
       end
-
-
-
       print "\n"
       print ceiling * building.apts_by_floor
       print "\n"
