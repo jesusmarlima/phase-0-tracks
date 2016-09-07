@@ -1,0 +1,36 @@
+html{
+  width: 100%;
+  background: lightgray;
+}
+
+body {
+  margin: auto;
+  max-width: 960px;
+}
+
+#master {
+    position: relative;
+    max-width: 960px;
+}
+
+#img_master {
+  width: 960px;
+}
+
+#next{
+    position: absolute;
+    top:40%;
+    right: 0;
+    opacity: 0.5 ;
+    font-size: 800%;
+    color: white;
+}
+
+#prev{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    opacity: 0.5 ;
+    font-size: 800%;
+    color: white;
+}
