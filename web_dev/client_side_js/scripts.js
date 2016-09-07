@@ -22,3 +22,14 @@ for (var i = 0; i < listItems.length; i++) {
 
   }
 }
+
+function coloring_lis(){
+  var h1 = document.getElementsByTagName("h1");
+  console.log(h1)
+  h1[0].style.color = "green";
+};
+
+// coloring_lis();
+
+img = document.getElementById("ducks");
+img.addEventListener("click",coloring_lis);
