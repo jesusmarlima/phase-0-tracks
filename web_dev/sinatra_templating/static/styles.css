@@ -1,3 +1,82 @@
+Html {
+  background-color: white;
+}
+
+h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
 body {
   font-family: Helvetica;
+  margin: auto;
+  max-width: 960px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+ul{
+  font-size: 120%;
+}
+
+.li_green {
+  background-color: white;
+  max-width: 30%;
+  padding: 3px;
+}
+
+.li_blue {
+  background-color: lightblue;
+  max-width: 30%;
+  padding: 3px;
+}
+
+.tr_blue {
+  background-color: lightblue;
+}
+
+.tr_white {
+  background-color: white;
+}
+
+.tr_title {
+  background-color: #cccccc ;
+}
+
+table {
+  width: 500px;
+  padding-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+  font-size: 120%;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 130%;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: lightblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: #cce6ff;
 }
