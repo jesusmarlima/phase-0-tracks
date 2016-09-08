@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a List of Allocations</title>
+</head>
+<body>
+  <p>Campuses</p>
+  <ul>
+    <% @allocations.each do |allocation| %>
+    <li><%= allocation['student'] %> - <%= allocation['campus'] %></li>
+    <% end %>
+  </ul>
+  <a href = "/">Back to Students</a>
+</body>
+</html>

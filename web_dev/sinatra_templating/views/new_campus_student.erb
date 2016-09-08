@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a New Student_Campus Relation</title>
+</head>
+<body>
+  <form action="/campus_student" method="POST">
+    <p>Students:
+    <select name="students">
+    <% @students.each do |student| %>
+        <option value="<%= student['id']%>"> <%= student['name']%></option>
+    <% end %>
+    </select>
+    </p>
+    <p>Campuses:
+    <select name="campuses">
+    <% @campuses.each do |campus| %>
+        <option value="<%= campus['id']%>"> <%= campus['name']%></option>
+    <% end %>
+    </select>
+    </p>
+    <button type="submit">Save</button>
+  </form>
+</body>
+</html>
