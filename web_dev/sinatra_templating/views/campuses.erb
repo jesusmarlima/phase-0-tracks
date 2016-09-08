@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a List of Campuses</title>
+</head>
+<body>
+  <p>Campuses</p>
+  <ul>
+    <% @campuses.each do |campus| %>
+    <li><%= campus['name'] %></li>
+    <% end %>
+  </ul>
+  <a href = "/">Back to Students</a>
+</body>
+</html>

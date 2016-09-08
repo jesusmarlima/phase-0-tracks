@@ -7,6 +7,9 @@
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
+  <p>Click <a href="campus/new">here</a> to create a new campus.</p>
+  <p>Click <a href="campus_student/new">here</a> to allocate students to campuses.</p>
+  <p>Click <a href="allocations">here</a> to see the allocations of students to campuses.</p>
   <ul>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>

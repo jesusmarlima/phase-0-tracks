@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a List of Students to the detail</title>
+</head>
+<body>
+  <p>Students</p>
+  <ul>
+    <% @students.each do |student| %>
+      <li><a href = "/students/<%= student['id'] %>"><%= student['name'] %></a></li>
+    <% end %>
+  </ul>
+</body>
+</html>
