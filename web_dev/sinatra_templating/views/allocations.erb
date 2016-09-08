@@ -2,14 +2,38 @@
 <html>
 <head>
   <title>Create a List of Allocations</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <p>Campuses</p>
-  <ul>
-    <% @allocations.each do |allocation| %>
-    <li><%= allocation['student'] %> - <%= allocation['campus'] %></li>
+  <h1>Student Management System</h1>
+  <h3>Campuses</h3>
+  <table>
+    <tr class="tr_title">
+        <th>Student</th>
+        <th>Campus</th>
+    </tr>
+    <% @allocations.each_with_index do |allocation,index| %>
+      <% if index%2 == 0 %>
+        <tr class="tr_blue">
+          <td>
+            <%= allocation['student'] %>
+          </td>
+          <td>
+            <%= allocation['campus'] %>
+          </td>
+        </tr>
+      <% else %>
+        <tr class="tr_white">
+          <td>
+            <%= allocation['student'] %>
+          </td>
+          <td>
+            <%= allocation['campus'] %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
-  </ul>
+  </table>
   <a href = "/">Back to Students</a>
 </body>
 </html>

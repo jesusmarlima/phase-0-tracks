@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Student Management System</title>
@@ -6,13 +7,20 @@
 <body>
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
-  <p>Click <a href="students/new">here</a> to create a new student.</p>
-  <p>Click <a href="campus/new">here</a> to create a new campus.</p>
-  <p>Click <a href="campus_student/new">here</a> to allocate students to campuses.</p>
-  <p>Click <a href="allocations">here</a> to see the allocations of students to campuses.</p>
-  <ul>
-    <% @students.each do |student| %>
-      <li><%= student['name'] %>, <%= student['age'] %></li>
+  <nav>
+    <a href="students/new">New student</a> |
+    <a href="campus/new">New campus</a> |
+    <a href="campus_student/new">Allocate students</a> |
+    <a href="allocations">See allocations</a>
+  </nav>
+  <h3>Students</h3>
+  <ul class="ul_gray">
+    <% @students.each_with_index do |student,index| %>
+      <%if index%2 == 0 %>
+        <li class="li_green"><%= student['name'] %>, <%= student['age'] %></li>
+      <%else%>
+        <li class="li_blue"><%= student['name'] %>, <%= student['age'] %></li>
+      <%end%>
     <% end %>
   </ul>
 </body>
