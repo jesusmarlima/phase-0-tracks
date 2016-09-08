@@ -12,7 +12,7 @@ db.results_as_hash = true
 
 # show students on the home page
 get '/' do
-  @students = db.execute("SELECT * FROM students")
+  @students = db.execute(SQL_ALL_STUDENTS)
   erb :home
 end
 
@@ -23,19 +23,19 @@ end
 # create new students via
 # a form
 post '/students' do
-  db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
+  db.execute(SQL_INSERT_STUDENTS, [params['name'], params['age'].to_i])
   redirect '/'
 end
 
 # create new page to link to students by id and show name
 get '/students/student_link' do
-  @students = db.execute("SELECT * FROM students")
+  @students = db.execute(SQL_ALL_STUDENTS)
   erb :student_link
 end
 
 #create new page to link individual student details
 get '/students/:id' do
-  @student = db.execute("SELECT * FROM students WHERE id=?", params[:id].to_i)[0]
+  @student = db.execute(SQL_SELECT_ONE_STUDENT, params[:id].to_i)[0]
   puts @student
   erb :student_details
 end
@@ -48,27 +48,27 @@ end
 
 #insert new campus into campuses table
 post '/campus' do
-  db.execute("INSERT INTO campuses (name) VALUES (?)", [params['name']])
+  db.execute(SQL_INSERT_CAMPUS, [params['name']])
   redirect '/campuses'
 end
 
 #send campuses data to campuses.erb
 get '/campuses' do
-  @campuses = db.execute("SELECT * FROM campuses")
+  @campuses = db.execute(SQL_ALL_CAMPUSES)
   erb :campuses
 end
 
 #create relation between students and campuses
 get '/campus_student/new' do
-  @campuses = db.execute("SELECT * FROM campuses")
-  @students = db.execute("SELECT * FROM students")
+  @campuses = db.execute(SQL_ALL_CAMPUSES)
+  @students = db.execute(SQL_ALL_STUDENTS)
   erb :new_campus_student
 end
 
 post '/campus_student' do
   student = params[:students].to_i
   campus = params[:campuses].to_i
-  db.execute("INSERT INTO campuses_students (student_id, campus_id) VALUES (?,?)", student, campus)
+  db.execute(SQL_INSERT_CAMPUS_STUDENT, student, campus)
   redirect "/"
 end
 

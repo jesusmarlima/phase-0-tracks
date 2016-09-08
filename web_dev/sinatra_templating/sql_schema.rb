@@ -21,3 +21,9 @@ SQL_ALLOCATIONS = <<-SQL
       AND   cs.student_id = s.id
   SQL
 
+SQL_INSERT_STUDENTS = "INSERT INTO students (name, age) VALUES (?,?)"
+SQL_SELECT_ONE_STUDENT = "SELECT * FROM students WHERE id=?"
+SQL_INSERT_CAMPUS = "INSERT INTO campuses (name) VALUES (?)"
+SQL_ALL_CAMPUSES = "SELECT * FROM campuses"
+SQL_ALL_STUDENTS = "SELECT * FROM students"
+SQL_INSERT_CAMPUS_STUDENT = "INSERT INTO campuses_students (student_id, campus_id) VALUES (?,?)"
